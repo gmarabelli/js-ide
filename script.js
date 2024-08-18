@@ -1,9 +1,11 @@
 function play(){
-	let program = document.getElementById("program");
+	debug.style.backgroundColor = "#fff";
+	debug.innerText = "";
 	try{
 		eval?.(program.value);
 	}catch(error){
-		console.log(error);
+		debug.style.backgroundColor = "#f66";
+		debug.innerText = error.toString();
 	}
 }
 

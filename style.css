@@ -11,7 +11,8 @@ body {
 }
 
 input:not([type=file]),
-textarea {
+textarea,
+#debug {
 	border: 5px solid black;
 	border-radius: 15px;
 	padding: 10px;
@@ -23,7 +24,10 @@ input:not([type=file]) {
 	font-weight: bold;
 }
 textarea {
-	height: 50vh;
+	height: 40vh;
+}
+#debug {
+	height: 20px;
 }
 
 #options {
