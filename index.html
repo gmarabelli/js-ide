@@ -6,15 +6,37 @@
 		<link rel="stylesheet" href="style.css">
 	</head>
 	<body>
-		<input id="title">
-		<textarea id="program"></textarea>
-		<div id="debug"></div>
-		<div id="options">
-			<input id="upload-input" type="file">
-			<label id="upload" for="upload-input">UPLOAD</label>
-			<button id="execute" onclick="play()">EXECUTE</button>
-			<button id="download" onclick="download()">DOWNLOAD</button>
+		<div>
+			<label class="label" for="title">Nome File:</label>
+			<input id="title" class="box" value="script">
 		</div>
+		<div>
+			<label class="label" for="program">Codice JavaScript:</label>
+			<div id="program-box" class="box">
+				<pre id="line_numbers">1</pre>
+				<div id="program_scroller">
+					<textarea id="program">alert("Hello World!");</textarea>
+				</div>
+				<div id="line_marker"></div>
+			</div>
+		</div>
+		<div>
+			<label class="label">Errori:</label>
+			<pre id="debug" class="box"></pre>
+		</div>
+		<div id="options">
+			<input id="upload_input" type="file">
+			<label id="upload" class="button" for="upload_input">OPEN</label>
+			<button id="run">RUN</button>
+			<button id="save">SAVE</button>
+		</div>
+		<script>
+			function play(){
+				debug.style.backgroundColor = "#fff";
+				debug.innerText = "";
+				eval?.("'use strict';\n" + program.value);
+			}
+		</script>
 		<script src="script.js"></script>
 	</body>
 </html>

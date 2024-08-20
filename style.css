@@ -1,33 +1,80 @@
 body {
 	margin: 0;
-	padding: 0;
+	padding: 0 calc(5vw - 15px);
 	height: 100vh;
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
 	align-content: center;
 	justify-content: space-evenly;
-	font-family: sans-serif;
+	font-family: mono;
 }
 
-input:not([type=file]),
-textarea,
-#debug {
-	border: 5px solid black;
+.box {
+	box-sizing: content-box;
+	border: 4px solid black;
 	border-radius: 15px;
 	padding: 10px;
 	width: 90vw;
 }
-input:not([type=file]) {
+#title {
 	height: 30px;
 	font-size: 24px;
 	font-weight: bold;
 }
-textarea {
+#program-box {
+	position: relative;
 	height: 40vh;
+	width: calc(90vw + 20px);
+	padding: 0;
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+#line_marker {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	margin: 10px 0;
+	height: 16px;
+	width: 100vw;
+	background: #cfc;
+}
+#line_numbers,
+#program {
+	display: block;
+	box-sizing: content-box;
+	margin: 0;
+	padding: 10px;
+	min-height: calc(40vh - 20px);
+	overflow: hidden;
+	background: transparent;
+}
+#line_numbers {
+	float: left;
+	border-right: 2px solid #000;
+	width: 32px;
+	text-align: right;
+}
+#program_scroller {
+	width: calc(90vw - 34px);
+	overflow-x: scroll;
+}
+#program {
+	border: none;
+	outline: none;
+	resize: none;
+	min-width: calc(90vw - 54px);
+	overflow-x: scroll;
+	overflow-y: hidden;
 }
 #debug {
-	height: 20px;
+	height: 48px;
+	margin: 0;
+}
+.label {
+	position: relative;
+	left: 15px;
+	font-weight: bold;
 }
 
 #options {
@@ -35,13 +82,13 @@ textarea {
 	flex-wrap: wrap;
 	justify-content: space-between;
 }
-input[type=file] {
+#upload_input {
 	display: none;
 }
-label,
+.button,
 button {
 	box-sizing: content-box;
-	border: 5px solid black;
+	border: 4px solid black;
 	border-radius: 15px;
 	padding: 10px;
 	height: 8vh;
@@ -51,6 +98,7 @@ button {
 	line-height: 8vh;
 	font-size: 24px;
 	font-weight: bold;
+	font-family: inherit
 }
 #upload {
 	background-color: #f00;
@@ -58,15 +106,15 @@ button {
 #upload:hover {
 	background-color: #c00;
 }
-#execute {
+#run {
 	background-color: #0f0;
 }
-#execute:hover {
+#run:hover {
 	background-color: #0c0;
 }
-#download {
+#save {
 	background-color: #48f;
 }
-#download:hover {
+#save:hover {
 	background-color: #36c;
 }
