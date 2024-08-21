@@ -44,13 +44,10 @@ async function loadFile(file){
 	adaptIDE();
 }
 
-program.addEventListener("input", () => {
-	adaptIDE();
-});
 function adaptIDE(){
 	const rows = program.value.split("\n")
 	const rowNum = rows.length;
-	line_numbers.style.height = program.style.height = (rowNum * 16) + "px";
+	line_numbers.style.height = program.style.height = (rowNum * 18) + "px";
 	line_numbers.innerText = "1";
 	let rowMaxLen = rowLength(rows[0]);
 	for(let i = 1; i < rowNum; i++){
@@ -59,13 +56,14 @@ function adaptIDE(){
 			rowMaxLen = rowLength(rows[i]);
 		}
 	}
-	program.style.width = (rowMaxLen * 8) + "px";
+	program.style.width = (rowMaxLen * 10) + "px";
 	putMarker();
 }
 function putMarker(){
-	line_marker.style.top = (countChar(program.value.substring(0, program.selectionStart), "\n") * 16) + "px";
-	line_marker.style.height = ((countChar(program.value.substring(program.selectionStart, program.selectionEnd), "\n") + 1) * 16) + "px";
+	line_marker.style.top = (countChar(program.value.substring(0, program.selectionStart), "\n") * 18) + "px";
+	line_marker.style.height = ((countChar(program.value.substring(program.selectionStart, program.selectionEnd), "\n") + 1) * 18) + "px";
 }
+program.addEventListener("input", adaptIDE);
 document.addEventListener("selectionchange", putMarker);
 function countChar(string, char){
 	let numLines = 0;
