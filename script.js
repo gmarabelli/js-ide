@@ -1,3 +1,8 @@
+function play(){
+	debug.style.backgroundColor = "#fff";
+	debug.innerText = "";
+	eval?.("'use strict';\n" + program.value);
+}
 run.addEventListener("click", play);
 window.addEventListener("error", (e) => {
 	debug.style.backgroundColor = "#f66";
@@ -82,7 +87,7 @@ document.addEventListener("keydown", e => {
 				e.preventDefault();
 				download();
 				break;
-			case "b":
+			case "e":
 				e.preventDefault();
 				play();
 				break;
