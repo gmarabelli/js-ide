@@ -34,7 +34,7 @@ document.getElementById('upload_input').addEventListener("change", async (e) => 
 });
 async function loadFile(file){
 	let content = await file.text();
-	if(!file.name.match(/\.html$/) || !content.match(/^<script>/) || !content.match(/<\/script>$/)){
+	if(!file.name.match(/\.html$/) || !content.match(/^<script>/) || !content.match(/<\/script>$/) || content.match(/<\/script>[^$]/)){
 		alert("È possibile caricare solo file HTML contenenti unicamente un tag '<script>'.");
 		return;
 	}
