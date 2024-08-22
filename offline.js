@@ -12,6 +12,7 @@ self.addEventListener("install", async (event) => {
 			"install.js",
 			"manifest.json",
 			"icon.png",
+			"UbuntuSansMono.woff2",
 			//"screenshot.png",
 		]);
 	})());
