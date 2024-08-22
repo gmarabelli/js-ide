@@ -79,6 +79,7 @@ body {
 	height: 48px;
 	margin: 0;
 	font-size: 16px;
+	font-family: inherit;
 }
 .label {
 	position: relative;
