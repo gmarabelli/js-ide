@@ -1,6 +1,10 @@
 const FONT_HEIGHT = 19;
 const FONT_WIDTH = 8.9601;
 
+const startEvent = new Event("start");
+
+setTimeout(() => {document.dispatchEvent(startEvent);}, 100);
+
 function play(){
 	debug.style.backgroundColor = "#fff";
 	debug.innerText = "";

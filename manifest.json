@@ -1,0 +1,22 @@
+{
+	"name": "JS IDE",
+	"icons": [
+		{
+			"src": "icon.png",
+			"type": "image/png",
+			"sizes": "512x512",
+			"purpose": "maskable any"
+		}
+	],
+	"theme_color": "#000",
+	"background_color": "#f0db4f",
+
+	"start_url": "/",
+	"display": "standalone",
+
+	"description": "Simple JavaScript IDE for introductory course to programming",
+	"categories": [
+		"education",
+		"productivity"
+	]
+}
