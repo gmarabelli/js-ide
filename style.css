@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "UbuntuSansMono";
+  src: url("UbuntuSansMono.woff2");
+}
+
 body {
 	margin: 0;
 	padding: 0 calc(5vw - 15px);
@@ -7,7 +12,7 @@ body {
 	flex-wrap: wrap;
 	align-content: center;
 	justify-content: space-evenly;
-	font-family: mono;
+	font-family: "UbuntuSansMono", monospace;
 }
 
 .box {
@@ -21,6 +26,7 @@ body {
 	height: 30px;
 	font-size: 24px;
 	font-weight: bold;
+	font-family: inherit;
 }
 #program-box {
 	position: relative;
@@ -35,7 +41,7 @@ body {
 	z-index: -1;
 	top: 0;
 	margin: 10px 0;
-	height: 16px;
+	height: 19px;
 	width: 100vw;
 	background: #cfc;
 }
@@ -49,6 +55,7 @@ body {
 	overflow: hidden;
 	background: transparent;
 	font-size: 16px;
+	font-family: inherit;
 }
 #line_numbers {
 	float: left;
