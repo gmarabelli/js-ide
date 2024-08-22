@@ -41,8 +41,8 @@ async function loadFile(file){
 
 	title.value = file.name.replace(/\.html$/, "");
 	content = content.replaceAll(/\n\t/g, "\n")
-		.replace(/^<script>\n/, "")
-		.replace(/\n<\/script>$/, "");
+		.replace(/^<script>\n?/, "")
+		.replace(/\n?<\/script>$/, "");
 	program.value = content;
 	adaptIDE();
 }
